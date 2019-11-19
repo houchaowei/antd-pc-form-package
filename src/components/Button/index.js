@@ -8,7 +8,7 @@ class Buttons extends React.Component{
         super(props);
     }
 
-    click = () => {
+    click () {
         alert(13)
     };
 

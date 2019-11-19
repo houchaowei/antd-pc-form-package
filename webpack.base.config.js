@@ -1,18 +1,20 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-    output: {
-        filename: "bundle.js",
-        path: path.join(__dirname, './dist'),
-        libraryTarget: 'umd',
-    },
     module: {
         rules: [
             {
                 test: /\.css$/,
-                use: ['style-loader', 'css-loader', 'postcss-loader']
+                use: [
+                    {
+                        loader: MiniCssExtractPlugin.loader
+                    },
+                    // ['style-loader', 'css-loader', 'postcss-loader']
+                    'css-loader'
+                ]
             }, {
                 test: /\.(js|jsx)$/,
                 loader: 'babel-loader',
@@ -38,6 +40,13 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: "./src/index.html"
         }),
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
+        new MiniCssExtractPlugin({
+            // Options similar to the same options in webpackOptions.output
+            // all options are optional
+            filename: '[name]-[hash].css',
+            chunkFilename: '[id][hash].css',
+            ignoreOrder: false, // Enable to remove warnings about conflicting order
+        }),
     ]
 };

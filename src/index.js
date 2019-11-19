@@ -3,4 +3,4 @@
  */
 
 export { default as Button } from './components/Button/index';
-export { default as Form } from './components/Form/index';
+export { default as FormPackage } from './components/FormPackage/index';
