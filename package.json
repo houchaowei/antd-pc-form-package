@@ -1,6 +1,6 @@
 {
   "name": "antd-pc-form-package",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "基于antd的pc端的form表单",
   "main": "dist/index.js",
   "keywords": ["antd", "form", "pc", "strategy pattern", "react", "frontend"],

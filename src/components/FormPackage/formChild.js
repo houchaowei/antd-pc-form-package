@@ -1,5 +1,5 @@
 import React from "react";
-import {Form, InputNumber, Select} from "antd";
+import {Form, InputNumber, Radio, Checkbox} from "antd";
 import Input from "antd/lib/input";
 import FORM_TYPE from "./enum";
 import Utils from "./../../libs/utils";
@@ -14,8 +14,7 @@ class FormItem  extends React.Component {
         this.state = {
             // ...
         };
-
-        this.handleChange = this.handleChange.bind(this);
+        this.checkBoxChange = this.checkBoxChange.bind(this);
     }
 
     componentDidMount() {
@@ -26,14 +25,7 @@ class FormItem  extends React.Component {
         return true
     }
 
-
-    // select change handle
-    handleChange (value) {
-        console.log(`selected ${value}`);
-        const {dataItem, setValue} = this.props;
-        let data = Utils.deep_clone(dataItem);
-        data.value = value;
-        setValue(data)
+    checkBoxChange (e) {
     }
 
     getPureFormItem (dataItem) {
@@ -55,13 +47,28 @@ class FormItem  extends React.Component {
             },
             [FORM_TYPE.RADIO.TYPE]: () => {
                 return (
-                    <Select onChange={this.handleChange}>
+                    <Radio.Group>
                         {
-                            dataItem.dataSource.map(item => {
-                                return <Select.Option value={item.value} key={item.value}>{item.text}</Select.Option>
+                            dataItem.source.map(item => {
+                                return <Radio value={item.value} key={item.value}>
+                                    {item.label}
+                                </Radio>
                             })
                         }
-                    </Select>
+                    </Radio.Group>
+                )
+            },
+            [FORM_TYPE.CHECKBOX.TYPE]: () => {
+                return (
+                    <div>
+                        {
+                            dataItem.source.map(item => {
+                                return <Checkbox value={item.value} key={item.value} onChange={this.checkBoxChange}>
+                                    {item.label}
+                                </Checkbox>
+                            })
+                        }
+                    </div>
                 )
             },
         }

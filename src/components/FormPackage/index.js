@@ -1,22 +1,24 @@
 import React from 'react';
-import {Form, Input, Icon, Button, InputNumber, Select} from "antd";
+import {Form, Input, Icon, Button, InputNumber, Select, Row, Col} from "antd";
 import 'antd/dist/antd.min.css';
 import FormItem from "./formChild";
 import Utils from "./../../libs/utils";
 
 class FormPackage extends React.Component{
+    static _label = ' ';
     constructor(props) {
         super(props);
         this.state = {
+            operationData: this.props.dataSource,
             formItemLayout: {
-                labelCol: { span: 8 },
-                wrapperCol: { span: 10 },
+                labelCol: { span: 6 },
+                wrapperCol: { span: 12 },
             },
         };
     }
 
     componentDidMount() {
-        // const {dataSource} = this.props;
+        // ...
     }
 
     // collect form values
@@ -32,12 +34,11 @@ class FormPackage extends React.Component{
         });
     };
 
-    setValue = value => {
-        this.props.setValue(value);
+    reset = () => {
+        this.props.form.resetFields();
     };
 
     render() {
-        // const { getFieldDecorator } = this.props.form;
         const {dataSource} = this.props;
         const {formItemLayout} = this.state;
         return (
@@ -46,15 +47,24 @@ class FormPackage extends React.Component{
                     {
                         dataSource.map(item => {
                             return (
-                                <FormItem key={item.key} HForm={this.props.form} dataItem={item} formItemLayout={formItemLayout} setValue={this.setValue}/>
+                                <FormItem key={item.key} HForm={this.props.form} dataItem={item} formItemLayout={formItemLayout}/>
                             )
                         })
                     }
 
-                    <Form.Item label=' ' {...formItemLayout}>
-                        <Button type="primary" htmlType="submit" className="login-form-button">
-                            确定
-                        </Button>
+                    <Form.Item label={FormPackage._label} {...formItemLayout}>
+                        <Row>
+                            <Col span={4}>
+                                <Button type="primary" htmlType="submit" className="login-form-button">
+                                    Submit
+                                </Button>
+                            </Col>
+                            <Col span={8}>
+                                <Button type="default" onClick={this.reset} className="login-form-button">
+                                    Reset
+                                </Button>
+                            </Col>
+                        </Row>
                     </Form.Item>
                 </Form>
             </div>

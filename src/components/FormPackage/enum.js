@@ -11,13 +11,13 @@ const FORM_TYPE = {
         TYPE: 'RADIO',
         TEXT: '单选框'
     },
+    CHECKBOX: {
+        TYPE: 'CHECKBOX',
+        TEXT: '多选框'
+    },
     SELECT: {
         TYPE: 3,
         TEXT: '下拉框'
-    },
-    CHECKBOX: {
-        TYPE: 5,
-        TEXT: '多选框'
     },
     DATE_PICKER: {
         TYPE: 6,

@@ -6,14 +6,14 @@ Through the strategy pattern, the form encapsulation is designed to simplify the
 
 ## Target Plan
 
-| Form Type Plan | Progress | Version  |
-|:---------------|:---------|:---------|
-| Input          | done     | v1.0.0   |
-| Number Input   | coding   |          |
-| Radio          |          |          |
-| Checkbox       |          |          |
-| Select         |          |          |
-| ...            |          |          |
+| Form Type Plan | Progress | Version |
+|:---------------|:---------|:--------|
+| Input          | done     | v1.0.0  |
+| Number Input   | done     | v1.0.0  |
+| Radio          | done     | v1.0.0  |
+| Checkbox       | coding   |         |
+| Select         |          |         |
+| ...            |          |         |
 
 ## Dependency
 ```bash
@@ -64,6 +64,7 @@ import {FormPackage} from "antd-pc-form-package";
 | INPUT        | 文本输入框       |
 | NUMBER_INPUT | 数字输入框       |
 | RADIO        | 单选框         |
+| CHECKBOX     | 多选框         |
 
 ## API
 
