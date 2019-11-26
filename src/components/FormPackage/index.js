@@ -1,15 +1,15 @@
 import React from 'react';
-import {Form, Input, Icon, Button, InputNumber, Select, Row, Col} from "antd";
+import {Form, Input, Icon, Button, InputNumber, Select, Row, Col, Checkbox} from "antd";
 import 'antd/dist/antd.min.css';
 import FormItem from "./formChild";
 import Utils from "./../../libs/utils";
+import DeepClone from "lodash/cloneDeep";
 
 class FormPackage extends React.Component{
     static _label = ' ';
     constructor(props) {
         super(props);
         this.state = {
-            operationData: this.props.dataSource,
             formItemLayout: {
                 labelCol: { span: 6 },
                 wrapperCol: { span: 12 },
@@ -72,4 +72,4 @@ class FormPackage extends React.Component{
     }
 };
 
-export default Form.create()(FormPackage);
+export default Form.create({name: "login"})(FormPackage);

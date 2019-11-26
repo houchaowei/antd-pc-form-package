@@ -36,17 +36,4 @@ module.exports = {
         modules: [path.resolve(__dirname, './src'), path.resolve(__dirname, './node_modules')],
         extensions: ['.js', '.jsx',],
     },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: "./src/index.html"
-        }),
-        new CleanWebpackPlugin(),
-        new MiniCssExtractPlugin({
-            // Options similar to the same options in webpackOptions.output
-            // all options are optional
-            filename: '[name]-[hash].css',
-            chunkFilename: '[id][hash].css',
-            ignoreOrder: false, // Enable to remove warnings about conflicting order
-        }),
-    ]
 };

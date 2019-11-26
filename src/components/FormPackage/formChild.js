@@ -14,18 +14,10 @@ class FormItem  extends React.Component {
         this.state = {
             // ...
         };
-        this.checkBoxChange = this.checkBoxChange.bind(this);
     }
 
     componentDidMount() {
         // console.log('formChild', this.props.dataItem);
-    }
-
-    shouldComponentUpdate(nextProps, nextState, nextContext) {
-        return true
-    }
-
-    checkBoxChange (e) {
     }
 
     getPureFormItem (dataItem) {
@@ -60,15 +52,7 @@ class FormItem  extends React.Component {
             },
             [FORM_TYPE.CHECKBOX.TYPE]: () => {
                 return (
-                    <div>
-                        {
-                            dataItem.source.map(item => {
-                                return <Checkbox value={item.value} key={item.value} onChange={this.checkBoxChange}>
-                                    {item.label}
-                                </Checkbox>
-                            })
-                        }
-                    </div>
+                    <Checkbox.Group options={dataItem.source}/>
                 )
             },
         }
@@ -78,13 +62,14 @@ class FormItem  extends React.Component {
         const {getFieldDecorator} = this.props.HForm;
         const {formItemLayout, dataItem} = this.props;
         const layout = dataItem.itemLayout ? dataItem.itemLayout : formItemLayout;
+        
         return (
             <div>
-                <Form.Item label={dataItem.label?dataItem.label:FormItem._label} {...layout}>
+                <Form.Item label={dataItem.label ? dataItem.label: FormItem._label} {...layout}>
                     {getFieldDecorator(dataItem.name, {
                         initialValue: dataItem.value,
-                        rules: dataItem.rules?dataItem.rules:[{required: true, message:FormItem._placeholder}],
-                        validateTrigger: dataItem.trigger === 'onChange' ? 'onChange' : 'onBlur',
+                        rules: dataItem.rules ? dataItem.rules : [{required: true, message: FormItem._placeholder}],
+                        validateTrigger: (dataItem.type === "CHECKBOX" || dataItem.trigger === 'onChange') ? 'onChange' : 'onBlur',
                     })(
                         this.getPureFormItem(dataItem)[dataItem.type||'INPUT'](),
                     )}

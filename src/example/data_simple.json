@@ -1,10 +1,22 @@
 [
   {
-    "key": 1,
-    "name": "name"
-  },
-  {
-    "key": 2,
-    "name": "age"
+    "key": 3,
+    "type": "CHECKBOX",
+    "name": "checkbox",
+    "value": ["1", "2"],
+    "source": [
+      {
+        "value": "1",
+        "label": "游泳"
+      },
+      {
+        "value": "2",
+        "label": "篮球"
+      },
+      {
+        "value": "3",
+        "label": "足球"
+      }
+    ]
   }
 ]

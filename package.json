@@ -1,18 +1,29 @@
 {
   "name": "antd-pc-form-package",
-  "version": "1.0.17",
+  "version": "1.0.28",
   "description": "基于antd的pc端的form表单",
   "main": "dist/index.js",
-  "keywords": ["antd", "form", "pc", "strategy pattern", "react", "frontend"],
+  "keywords": [
+    "antd",
+    "form",
+    "pc",
+    "strategy pattern",
+    "react",
+    "frontend"
+  ],
   "scripts": {
     "start": "webpack-dev-server --open --config webpack.dev.config.js",
     "build": "webpack --config webpack.product.config.js",
+    "dll": "webpack --config webpack.dll.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@babel/runtime": "^7.0.0",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1"
@@ -35,6 +46,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "clean-webpack-plugin": "^3.0.0",
+    "compression-webpack-plugin": "^3.0.0",
     "css-loader": "^2.1.1",
     "html-webpack-plugin": "^3.2.0",
     "less": "^3.9.0",
@@ -42,9 +54,12 @@
     "mini-css-extract-plugin": "^0.8.0",
     "postcss-loader": "^3.0.0",
     "style-loader": "^0.23.1",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.41.2",
+    "webpack-bundle-analyzer": "^3.6.0",
     "webpack-cli": "^3.3.3",
     "webpack-dev-server": "^3.7.1",
-    "webpack-merge": "^4.2.1"
+    "webpack-merge": "^4.2.1",
+    "webpack-parallel-uglify-plugin": "^1.1.2"
   }
 }

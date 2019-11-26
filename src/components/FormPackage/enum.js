@@ -16,15 +16,15 @@ const FORM_TYPE = {
         TEXT: '多选框'
     },
     SELECT: {
-        TYPE: 3,
+        TYPE: 'SELECT',
         TEXT: '下拉框'
     },
     DATE_PICKER: {
-        TYPE: 6,
+        TYPE: 'DATE_PICKER',
         TEXT: '日期选择框'
     },
     TREE_SELECT: {
-        TYPE: 7,
+        TYPE: 'TREE_SELECT',
         TEXT: '树选择器'
     }
 }

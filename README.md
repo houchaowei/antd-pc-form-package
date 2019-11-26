@@ -11,8 +11,8 @@ Through the strategy pattern, the form encapsulation is designed to simplify the
 | Input          | done     | v1.0.0  |
 | Number Input   | done     | v1.0.0  |
 | Radio          | done     | v1.0.0  |
-| Checkbox       | coding   |         |
-| Select         |          |         |
+| Checkbox       | done     | v1.0.0  |
+| Select         | coding   |         |
 | ...            |          |         |
 
 ## Dependency
@@ -72,6 +72,7 @@ import {FormPackage} from "antd-pc-form-package";
 |:--------------|:----------------|:-----------------|:--------|:---------|
 | dataSource    | form configs    | object           |         | v1.0.0   |
 | getFormValues | get form values | Function(values) |         | v1.0.0   |
+
 
 # Contact
 - Email: newweber@163.com
