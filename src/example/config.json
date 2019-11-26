@@ -60,7 +60,10 @@
     "label": "爱好",
     "type": "CHECKBOX",
     "name": "checkbox",
-    "value": ["1", "2"],
+    "value": [
+      "1",
+      "2"
+    ],
     "source": [
       {
         "value": "1",
@@ -103,6 +106,14 @@
     "name": "switch",
     "label": "开关",
     "value": "checked",
+    "rules": []
+  },
+  {
+    "key": 7,
+    "type": "DATE_PICKER",
+    "name": "date-picker",
+    "label": "时间选择器",
+    "value": "",
     "rules": []
   }
 ]

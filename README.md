@@ -6,17 +6,17 @@ Through the strategy pattern, the form encapsulation is designed to simplify the
 
 ## Target Plan
 
-| Form Type Plan   | Progress | Version |
-|:-----------------|:---------|:--------|
-| Input            | done     | v1.0.0  |
-| Number Input     | done     | v1.0.0  |
-| Radio            | done     | v1.0.0  |
-| Checkbox         | done     | v1.0.0  |
-| Select           | done     | v1.0.0  |
-| Switch           | done     | v1.0.0  |
-| Date Time Picker | coding   |         |
-| Tree Select      | coding   |         |
-| ...              |          |         |
+| Form Type Plan | Progress | Version |
+|:---------------|:---------|:--------|
+| Input          | done     | v1.0.0  |
+| Number Input   | done     | v1.0.0  |
+| Radio          | done     | v1.0.0  |
+| Checkbox       | done     | v1.0.0  |
+| Select         | done     | v1.0.0  |
+| Switch         | done     | v1.0.0  |
+| Date Picker    | done     | v1.0.0  |
+| Tree Select    | coding   |         |
+| ...            |          |         |
 
 ## Dependency
 ```bash
@@ -64,16 +64,16 @@ import {FormPackage} from "antd-pc-form-package";
 
 ### 'type' enumerations
 
-| Type             | Description |
-|:-----------------|:------------|
-| INPUT            | 文本输入框       |
-| NUMBER_INPUT     | 数字输入框       |
-| RADIO            | 单选框         |
-| CHECKBOX         | 多选框         |
-| SELECT           | 下拉框         |
-| SWITCH           | 开关          |
-| DATE_TIME_PICKER | 日期选择框       |
-| TREE_SELECT      | 树选择器        |
+| Type         | Description |
+|:-------------|:------------|
+| INPUT        | 文本输入框       |
+| NUMBER_INPUT | 数字输入框       |
+| RADIO        | 单选框         |
+| CHECKBOX     | 多选框         |
+| SELECT       | 下拉框         |
+| SWITCH       | 开关          |
+| DATE_PICKER  | 日期选择框       |
+| TREE_SELECT  | 树选择器        |
 
 ## API
 
@@ -85,3 +85,5 @@ import {FormPackage} from "antd-pc-form-package";
 
 # Contact
 - Email: newweber@163.com
+- Github: https://github.com/houchaowei/antd-pc-form-package
+- Issues: https://github.com/houchaowei/antd-pc-form-package/issues

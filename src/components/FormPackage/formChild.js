@@ -1,5 +1,5 @@
 import React from "react";
-import {Form, InputNumber, Radio, Checkbox, Select, Switch} from "antd";
+import {Form, InputNumber, Radio, Checkbox, Select, Switch, DatePicker} from "antd";
 import Input from "antd/lib/input";
 import FORM_TYPE from "./enum";
 import Utils from "./../../libs/utils";
@@ -9,17 +9,10 @@ class FormItem  extends React.Component {
     static _label = ' ';
     static _sourceErrorMessage = 'source.item expect an array, not be null or []';
     static _valueBeBooleanErrorMessage = 'value expect a boolean, not be string or other';
-    // static state;
+    static _datePickerPlaceholder = '请选择日期';
+
     constructor(props) {
         super(props);
-
-        this.state = {
-            // ...
-        };
-    }
-
-    componentDidMount() {
-        // console.log('formChild', this.props.dataItem);
     }
 
     getPureFormItem (dataItem) {
@@ -88,6 +81,11 @@ class FormItem  extends React.Component {
                 return (
                     <Switch checked={dataItem.value} onChange={ (v, e) => {dataItem.value = v}}/>
                 )
+            },
+            [FORM_TYPE.DATE_PICKER.TYPE]: () => {
+                return (
+                    <DatePicker placeholder={FormItem._datePickerPlaceholder}/>
+                )
             }
         }
     };
@@ -96,16 +94,24 @@ class FormItem  extends React.Component {
         const {getFieldDecorator} = this.props.HForm;
         const {formItemLayout, dataItem} = this.props;
         const layout = dataItem.itemLayout ? dataItem.itemLayout : formItemLayout;
-        
+
+        const initialValue = {
+            initialValue: dataItem.value
+        };
+        const rules = {
+            rules: dataItem.rules ? dataItem.rules : [{required: true, message: FormItem._placeholder}]
+        };
+        const validateTrigger = {
+            validateTrigger: (dataItem.type === "CHECKBOX" || dataItem.trigger === 'onChange') ? 'onChange' : 'onBlur'
+        };
+
+        const config = Object.assign({}, dataItem.type !== 'DATE_PICKER' ? initialValue : {}, rules, validateTrigger);
+        // console.log(config);
+
         return (
             <div>
                 <Form.Item label={dataItem.label ? dataItem.label: FormItem._label} {...layout}>
-                    {getFieldDecorator(dataItem.name, {
-                        initialValue: dataItem.value,
-                        // [dataItem.type !== 'SWITCH' && "initialValue"]: dataItem.type !== 'SWITCH' && dataItem.value,
-                        rules: dataItem.rules ? dataItem.rules : [{required: true, message: FormItem._placeholder}],
-                        validateTrigger: (dataItem.type === "CHECKBOX" || dataItem.trigger === 'onChange') ? 'onChange' : 'onBlur',
-                    })(
+                    {getFieldDecorator(dataItem.name, config)(
                         this.getPureFormItem(dataItem)[dataItem.type||'INPUT'](),
                     )}
                 </Form.Item>

@@ -72,5 +72,13 @@
     "label": "开关",
     "value": false,
     "rules": []
+  },
+  {
+    "key": 7,
+    "type": "DATE_PICKER",
+    "name": "date-picker",
+    "label": "时间选择器",
+    "value": "",
+    "rules": []
   }
 ]
