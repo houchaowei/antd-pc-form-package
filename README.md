@@ -6,14 +6,17 @@ Through the strategy pattern, the form encapsulation is designed to simplify the
 
 ## Target Plan
 
-| Form Type Plan | Progress | Version |
-|:---------------|:---------|:--------|
-| Input          | done     | v1.0.0  |
-| Number Input   | done     | v1.0.0  |
-| Radio          | done     | v1.0.0  |
-| Checkbox       | done     | v1.0.0  |
-| Select         | coding   |         |
-| ...            |          |         |
+| Form Type Plan   | Progress | Version |
+|:-----------------|:---------|:--------|
+| Input            | done     | v1.0.0  |
+| Number Input     | done     | v1.0.0  |
+| Radio            | done     | v1.0.0  |
+| Checkbox         | done     | v1.0.0  |
+| Select           | done     | v1.0.0  |
+| Switch           | done     | v1.0.0  |
+| Date Time Picker | coding   |         |
+| Tree Select      | coding   |         |
+| ...              |          |         |
 
 ## Dependency
 ```bash
@@ -45,26 +48,32 @@ import {FormPackage} from "antd-pc-form-package";
     icon: <Icon type="user" style={{ color: 'red' }} />,
 },
 ```
-| Property    | Description                  | Type             | Default                                         | Required |
-|:------------|:-----------------------------|:-----------------|:------------------------------------------------|:---------|
-| key         | Unique identification number | Number           |                                                 | True     |
-| type        | Form type                    | String           | INPUT                                           | False    |
-| name        | Name                         | String           |                                                 | True     |
-| label       |                              | String           |                                                 | False    |
-| value       |                              | Number \| string |                                                 | False    |
-| placeholder |                              | String           | FormItem._placeholder                           | False    |
-| rules       |                              | Object           | {required: true, message:FormItem._placeholder} | False    |
-| icon        |                              | Component        |                                                 | False    |
-| trigger     | Validate trigger             | String           | 'onBlur'                                        | False    |
+
+| Property    | Description                              | Type                        | Default                                         | Required |
+|:------------|:-----------------------------------------|:----------------------------|:------------------------------------------------|:---------|
+| key         | Unique identification number             | Number                      |                                                 | True     |
+| type        | Form type                                | String                      | INPUT                                           | False    |
+| name        | Name                                     | String                      |                                                 | True     |
+| label       |                                          | String                      |                                                 | False    |
+| value       |                                          | Number \| string \| Boolean |                                                 | False    |
+| placeholder |                                          | String                      | FormItem._placeholder                           | False    |
+| rules       |                                          | Object                      | {required: true, message:FormItem._placeholder} | False    |
+| icon        |                                          | Component                   |                                                 | False    |
+| trigger     | Validate trigger                         | String                      | 'onBlur'                                        | False    |
+| source      | radio, checkbox, select etc must be need | Array[]                     |                                                 | False    |
 
 ### 'type' enumerations
 
-| Type         | Description |
-|:-------------|:------------|
-| INPUT        | 文本输入框       |
-| NUMBER_INPUT | 数字输入框       |
-| RADIO        | 单选框         |
-| CHECKBOX     | 多选框         |
+| Type             | Description |
+|:-----------------|:------------|
+| INPUT            | 文本输入框       |
+| NUMBER_INPUT     | 数字输入框       |
+| RADIO            | 单选框         |
+| CHECKBOX         | 多选框         |
+| SELECT           | 下拉框         |
+| SWITCH           | 开关          |
+| DATE_TIME_PICKER | 日期选择框       |
+| TREE_SELECT      | 树选择器        |
 
 ## API
 

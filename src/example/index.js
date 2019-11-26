@@ -15,6 +15,7 @@ class App extends React.Component {
         super(props);
         this.state = {
             dataSource: require('./data.json')
+            // dataSource: require('./data_simple.json')
         }
     }
 

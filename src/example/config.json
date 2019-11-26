@@ -1,5 +1,37 @@
 [
   {
+    "key": 1,
+    "name": "name",
+    "type": "INPUT",
+    "label": "姓名",
+    "value": "",
+    "placeholder": "请输入姓名",
+    "trigger": "onBlur",
+    "icon": "",
+    "rules": [
+      {
+        "required": true,
+        "message": "请输入姓名"
+      }
+    ]
+  },
+  {
+    "key": 2,
+    "name": "age",
+    "type": "NUMBER_INPUT",
+    "label": "年龄",
+    "value": "",
+    "placeholder": "请输入年龄",
+    "trigger": "onBlur",
+    "icon": "",
+    "rules": [
+      {
+        "required": true,
+        "message": "请输入年龄"
+      }
+    ]
+  },
+  {
     "key": 3,
     "name": "sex",
     "type": "RADIO",
@@ -70,7 +102,7 @@
     "type": "SWITCH",
     "name": "switch",
     "label": "开关",
-    "value": false,
+    "value": "checked",
     "rules": []
   }
 ]

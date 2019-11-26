@@ -19,6 +19,10 @@ const FORM_TYPE = {
         TYPE: 'SELECT',
         TEXT: '下拉框'
     },
+    SWITCH: {
+        TYPE: 'SWITCH',
+        TEXT: '开关'
+    },
     DATE_PICKER: {
         TYPE: 'DATE_PICKER',
         TEXT: '日期选择框'
@@ -27,6 +31,6 @@ const FORM_TYPE = {
         TYPE: 'TREE_SELECT',
         TEXT: '树选择器'
     }
-}
+};
 
 export default FORM_TYPE;

@@ -2,7 +2,6 @@ import React from 'react';
 import {Form, Input, Icon, Button, InputNumber, Select, Row, Col, Checkbox} from "antd";
 import 'antd/dist/antd.min.css';
 import FormItem from "./formChild";
-import Utils from "./../../libs/utils";
 import DeepClone from "lodash/cloneDeep";
 
 class FormPackage extends React.Component{
